@@ -1,3 +1,6 @@
+[![Azure Python 3.10.6](https://github.com/olanipekun01/github-actions-demo/actions/workflows/main.yml/badge.svg)](https://github.com/olanipekun01/github-actions-demo/actions/workflows/main.yml)
+
+
 # github-actions-demo
 
 ## to use my project
