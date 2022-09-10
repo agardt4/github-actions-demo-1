@@ -4,7 +4,8 @@
 # https://aka.ms/yaml
 
 name: Azure Python 3.6
-on: [push]
+trigger:
+  master
 jobs:
   build:
     runs-on: ubuntu-latest
