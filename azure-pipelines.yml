@@ -31,8 +31,6 @@ steps:
     versionSpec: '$(pythonVersion)'
     displayName: 'Use Python $(pythonVersion)'
 - script: |
-  python -m venv antenv
-  source antenv/bin/activate
   make install
 workingDirectory: $(projectRoot)
 
