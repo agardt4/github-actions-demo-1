@@ -20,16 +20,16 @@ variables:
   pythonVersion: '3.7'
 stages:
 - stage: Build
-displayName: Build stage
+  displayName: Build stage
 jobs:
 - job: BuildJob
 pool:
-vmImage: $(vmImageName)
+  vmImage: $(vmImageName)
 steps:
 - task: UsePythonVersion@0
 inputs:
-versionSpec: '$(pythonVersion)'
-displayName: 'Use Python $(pythonVersion)'
+  versionSpec: '$(pythonVersion)'
+  displayName: 'Use Python $(pythonVersion)'
 - script: |
   python -m venv antenv
   source antenv/bin/activate
