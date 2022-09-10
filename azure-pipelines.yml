@@ -34,5 +34,5 @@ steps:
   python -m venv antenv
   source antenv/bin/activate
   make install
-  workingDirectory: $(projectRoot)
+workingDirectory: $(projectRoot)
 
