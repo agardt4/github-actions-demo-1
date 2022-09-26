@@ -1,5 +1,6 @@
 name: Azure Python 3.10.6
 on: [push, pull_request]
+
 jobs:
   python-setup:
       runs-on: ubuntu-latest
@@ -21,18 +22,20 @@ jobs:
       - name: Test
         run: |
           make test
-  nodejs:
+  stale:
       runs-on: ubuntu-latest
-      strategy:
-        matrix:
-            node-version: [16.x]
+      permissions:
+        issues: write
+        pull-requests: write
+
       steps:
-        - uses: actions/checkout@v3
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v3
-          with:
-            node-version: ${{ matrix.node-version }}
-        - run: npm ci
-        - run: npm run build --if-present
-        - run: npm test
+      - uses: actions/stale@v5
+        with:
+          days-before-issue-stale: 30
+          days-before-issue-close: 15
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: 'problema no resuelto por mas de 30 dias'
+          stale-pr-message: 'problema se cierra por exceder los dias establecidos'
+          stale-issue-label: 'no-issue-activity'
+          stale-pr-label: 'no-pr-activity'
   
