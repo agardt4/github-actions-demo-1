@@ -1,5 +1,7 @@
-black
-pylint
-pytest
-pytest-cov
-click
+name: base
+dependencies:
+  - black
+  - pylint
+  - pytest
+  - pytest-cov
+  - click
